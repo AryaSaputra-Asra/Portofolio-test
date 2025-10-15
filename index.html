@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Pribadi - Mahasiswa IT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        
+        /* Layout Frame */
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "nav main"
+                "footer footer";
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        header {
+            grid-area: header;
+            background: #2c3e50;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Navigation */
+        nav {
+            grid-area: nav;
+            background: #34495e;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            list-style: none;
+        }
+        
+        nav li {
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        
+        nav li:hover {
+            background: #3498db;
+        }
+        
+        /* Main Content */
+        main {
+            grid-area: main;
+            padding: 2rem;
+            background: white;
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill {
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .project {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        /* Footer */
+        footer {
+            grid-area: footer;
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas: 
+                    "header"
+                    "nav"
+                    "main"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: flex;
+                overflow-x: auto;
+            }
+            
+            nav li {
+                border-bottom: none;
+                border-right: 1px solid rgba(255,255,255,0.1);
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nama Mahasiswa</h1>
+            <p>Mahasiswa IT Universitas Pamulang - Semester 5</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#" data-target="home">Beranda</a></li>
+                <li><a href="#" data-target="about">Tentang</a></li>
+                <li><a href="#" data-target="skills">Keahlian</a></li>
+                <li><a href="#" data-target="projects">Proyek</a></li>
+                <li><a href="#" data-target="contact">Kontak</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section id="home" class="content-section active">
+                <h2>Selamat Datang</h2>
+                <p>Halo! Saya Arya Saputra mahasiswa Teknologi Informasi di Universitas Pamulang yang saat ini berada di semester 5.</p>
+                <p>Saya memiliki ketertarikan dalam pengembangan web dan teknologi terkini.</p>
+            </section>
+            
+            <section id="about" class="content-section">
+                <h2>Tentang Saya</h2>
+                <p>Saya adalah mahasiswa aktif Program Studi Teknologi Informasi di Universitas Pamulang.</p>
+                <p>Fokus studi saya saat ini adalah pada pengembangan aplikasi web dan mobile.</p>
+            </section>
+            
+            <section id="skills" class="content-section">
+                <h2>Keahlian</h2>
+                <p>Berikut adalah beberapa keahlian yang saya kuasai:</p>
+                <div class="skills">
+                    <div class="skill">
+                        <h3>HTML & CSS</h3>
+                        <p>Membuat layout website responsif</p>
+                    </div>
+                    <div class="skill">
+                        <h3>JavaScript</h3>
+                        <p>Pengembangan frontend interaktif</p>
+                    </div>
+                    <div class="skill">
+                        <h3>Python</h3>
+                        <p>Pengembangan backend dan scripting</p>
+                </div>
+            </section>
+            
+            <section id="projects" class="content-section">
+                <h2>Proyek</h2>
+                <p>Beberapa proyek yang sedang saya pelajari:</p>
+                <div class="projects">
+                    <div class="project">
+                        <h3>Sistem Perpustakaan</h3>
+                        <p>Aplikasi web untuk mengelola data buku dan peminjaman</p>
+                    </div>
+                    <div class="project">
+                        <h3>Website Portofolio</h3>
+                        <p>Website pribadi untuk menampilkan karya dan kemampuan</p>
+                    </div>
+                    <div class="project">
+                        <h3>Aplikasi To-Do List</h3>
+                        <p>Aplikasi sederhana untuk mengelola tugas harian</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contact" class="content-section">
+                <h2>Kontak</h2>
+                <p>Silakan hubungi saya melalui:</p>
+                <p>Email: email@contoh.com</p>
+                <p>Telepon: 0812-3456-7890</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Mahasiswa IT Unpam. Semua hak dilindungi.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('.content-section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Sembunyikan semua section
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Tampilkan section yang dipilih
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
